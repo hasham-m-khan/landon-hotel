@@ -10,12 +10,16 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="reservation" />
+        <module name="landon" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="reservation" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="landon" options="-parameters" />
       <module name="reservation" options="-parameters" />
     </option>
   </component>
