@@ -17,6 +17,4 @@ public class ReservationResponse {
         this.roomNumber = roomNumber;
         this.price = price;
     }
-
-
 }
