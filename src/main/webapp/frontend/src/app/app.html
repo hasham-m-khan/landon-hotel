@@ -21,14 +21,14 @@
     <article class="content">
       <div class="row text-light">
       <div class="col-12">
-        <div class="d-flex justify-content-center gap-5">
+        <div class="d-flex justify-content-center gap-5 mb-5">
           <img src="/images/intro_room.jpg" alt="Intro Gallery Room Sample Pictures" class="rounded-4 shadow-sm">
           <img src="/images/intro_pool.jpg" alt="Intro Gallery Pool Sample Pictures" class="rounded-4 shadow-sm">
           <img src="/images/intro_dining.jpg" alt="Intro Gallery Dining Sample Pictures" class="rounded-4 shadow-sm">
           <img src="/images/intro_attractions.jpg" alt="Intro Gallery Attractions Sample Pictures" class="rounded-4 shadow-sm">
           <img src="/images/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures" class="hidesm rounded-4 shadow-sm">
         </div>
-        <h1>Book a Room</h1>
+        <h1 class="col-12 text-center">Book a Room</h1>
 
         <form [formGroup]="roomsearch" class="d-flex justify-content-center col-12">
           <div class="form-group me-2">
@@ -43,9 +43,38 @@
             <button type="button" (click)="onSubmit(roomsearch)" class="btn btn-primary">Submit</button>
           </div>
         </form>
+      </div>
+      </div>
 
-      </div>
-      </div>
+        <div class="col-12 d-flex flex-column align-items-center mt-5 available-rooms">
+            <h1 class="col-12 text-center">Available Rooms</h1>
+            <div class="row col-12">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                @for (room of rooms; track room.id) {
+                                    <tr>
+                                        <td>
+                                            <img src="/images/intro_room.jpg"
+                                                 alt="Intro Gallery Room Sample Pictures"
+                                                 class="rounded-4 img-fluid shadow-sm">
+                                        </td>
+                                        <td>
+                                            <strong>Room #: {{ room.roomNumber }}</strong><br>
+                                            <strong>Price: ${{ room.price }}</strong>
+                                        </td>
+                                        <td>
+                                            <button type="button" (click)="reserveRoom(room.id)" class="btn btn-primary">Reserve</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </article>
   </div><!-- welcome -->
