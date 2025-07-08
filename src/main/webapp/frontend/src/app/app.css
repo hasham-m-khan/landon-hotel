@@ -402,7 +402,7 @@ header #nav .navbar ul li a.active {
 #welcome h1 {
   font-weight: normal;
   line-height: 100%;
-  color: #a24a19;
+  color: #e0b286;
   padding: 10px 0;
 }
 
@@ -945,4 +945,18 @@ footer #socialmedia ul li img {
   border-radius: 50%;
 }
 
+.available-rooms h1 {
+    border-bottom: 3px solid #907f6f;
+}
+
+.table tr {
+    border-spacing: 0 2rem;
+}
+
+.table tr td {
+    padding: 12px 0;
+    background: none;
+    border-bottom: 2px solid #918070;
+    color: #fff;
+}
 /*# sourceMappingURL=style.css.map */
