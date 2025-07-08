@@ -1,5 +1,7 @@
 package com.landon.config;
 
+import com.landon.converter.RoomEntityToReservationResponseConverter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ConversionServiceFactoryBean;
 import org.springframework.core.convert.ConversionService;
@@ -12,9 +14,14 @@ import java.util.Set;
 public class ConversionConfig {
 
     private Set<Converter> getConverters() {
-        return new HashSet<Converter>();
+        Set<Converter> converters = new HashSet<Converter>();
+
+        converters.add(new RoomEntityToReservationResponseConverter());
+
+        return converters;
     }
 
+    @Bean
     public ConversionService conversionService() {
         ConversionServiceFactoryBean bean = new ConversionServiceFactoryBean();
         bean.setConverters(getConverters());
